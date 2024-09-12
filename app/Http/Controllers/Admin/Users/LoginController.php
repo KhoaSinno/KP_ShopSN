@@ -26,6 +26,7 @@ class LoginController extends Controller
         if (Auth::attempt([
             'email' => $request->input('email'),
             'password' => $request->input('password'),
+            // role = 1 is admin check hear
         ], $request->input('remember'))) {
 
             return redirect()->route('admin');
