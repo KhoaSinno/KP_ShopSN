@@ -1,5 +1,5 @@
 @extends('admin.main')
 
 @section('content')
-SInoo
+Sinoo
 @endsection

@@ -104,3 +104,5 @@
         throw fetch("/cdn-cgi/zaraz/t"), e;
     };
 </script>
+
+@yield('head')
