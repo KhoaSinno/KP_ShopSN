@@ -16,10 +16,11 @@
         <div class="form-group mb-3">
             <label for="menu">Parent Menu</label>
             <select aria-label="State" class="custom-select" name="parent_id">
-                <option selected value="0">Select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="0">Select menu</option>
+                @foreach ($menus as $menu)
+                <option value="{{$menu->id}}">{{$menu->name}}</option>
+
+                @endforeach
             </select>
         </div>
 

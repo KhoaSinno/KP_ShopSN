@@ -22,7 +22,7 @@ class CreateFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'unique:menus,name', 'string', 'max:255'],
             'parent_id' => ['nullable', 'integer'],
         ];
     }
@@ -33,6 +33,7 @@ class CreateFormRequest extends FormRequest
             'name.required' => 'The name field is required.',
             'name.string' => 'The name field must be a string.',
             'name.max' => 'The name field must be a maximum of 255 characters.',
+            'name.unique' => 'The name has already been taken by SN.',
             'parent_id.integer' => 'The parent id field must be an integer.',
         ];
     }
