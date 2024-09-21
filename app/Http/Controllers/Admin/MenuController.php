@@ -29,4 +29,12 @@ class MenuController extends Controller
 
         return redirect()->back();
     }
+
+    public function index()
+    {
+        return view("admin.menu.list", [
+            'title' => 'List menu',
+            'menus' => $this->menuService->getAll(),
+        ]);
+    }
 }

@@ -32,6 +32,11 @@ class MenuService
 
     public function getParent()
     {
-        return Menu::where('parent_id', '=', 0)->get();
+        return Menu::where('parent_id', 0)->get();
+    }
+    
+    public function getAll()
+    {
+        return Menu::orderByDesc('id')->paginate(20);
     }
 }

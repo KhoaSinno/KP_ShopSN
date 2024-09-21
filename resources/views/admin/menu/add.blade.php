@@ -32,6 +32,8 @@
         <div class="mb-3">
             <label for="content" class="form-label">Content description</label>
             <textarea id="content" name="content" class="form-control" rows="3"></textarea>
+            <script>CKEDITOR.replace('content');</script>
+
         </div>
 
         <div class="form-group mb-3">
@@ -63,7 +65,7 @@
 
 
 @section('footer')
-<script>
+<!-- <script>
     CKEDITOR.replace('content');
-</script>
+</script> -->
 @endsection
