@@ -15,14 +15,18 @@ class Helper
                 <tr>
                     <td>' . $menu->id . '</td>
                     <td>' . $char . $menu->name . '</td>
-                    <td>' . $menu->update_at . '</td>
-                    <td>&nbsp;</td>
+                    <td>' . $menu->active . '</td>
+                    <td>' . $menu->updated_at . '</td>
+                    <td class="d-flex justify-content-end">
+                        <a class="btn btn-warning btn-sm mr-2" href="admin/menus/edit/' . $menu->id . '"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn btn-danger btn-sm  mr-2" onclick="removeRow(' . $menu->id . ',  \'/admin/menus/destroy\')" href="#" ><i class="fa-solid fa-trash"></i></a>
+                </td>
                 </tr>
                 ';
 
                 unset($menus[$key]);
 
-                $html .= self::menu($menus, $menu->id, $char .' --  ');
+                $html .= self::menu($menus, $menu->id, $char . ' --  ');
             }
         }
         return $html;

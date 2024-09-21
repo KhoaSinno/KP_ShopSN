@@ -34,9 +34,23 @@ class MenuService
     {
         return Menu::where('parent_id', 0)->get();
     }
-    
+
     public function getAll()
     {
         return Menu::orderByDesc('id')->paginate(20);
+    }
+    public function destroy($request)
+    {
+        try {
+            $id = (int) $request->input('id');
+            $menu = Menu::where('id', $id)->first();
+            if ($menu) {
+                return Menu::where('id', $id)->orWhere('parent_id', $id)->delete();
+            }
+        } catch (\Exception $ex) {
+            // Session::flash('error', $ex->getMessage());
+            return false;
+        }
+        return false;
     }
 }

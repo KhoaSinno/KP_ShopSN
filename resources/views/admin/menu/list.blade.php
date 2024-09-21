@@ -9,6 +9,7 @@
     <thead>
         <tr>
             <th>ID</th>
+            <th>Name</th>
             <th>Active</th>
             <th>Update</th>
             <th>&nbsp;</th>
@@ -19,9 +20,4 @@
         {!! app\Helpers\Helper::menu($menus) !!}
     </body>
 </table>
-@endsection
-
-
-@section('footer')
-
 @endsection
